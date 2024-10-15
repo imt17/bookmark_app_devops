@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="#home">Bookmark</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#home" id="home-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#bookmarks" id="bookmarks-link">Bookmarks</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#login" id="login-link">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#auth" id="register-link">Register</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Register</h2>
+    <form id="registerForm" class="needs-validation" novalidate>
+        <div class="form-group">
+            <input type="text" class="form-control" id="username" placeholder="Username" required>
+            <div class="invalid-feedback">
+                Please provide a username.
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="firstName" placeholder="First Name">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+        </div>
+        <div class="form-group">
+            <input type="email" class="form-control" id="email" placeholder="Email" required>
+            <div class="invalid-feedback">
+                Please provide a valid email address.
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" id="password" placeholder="Password" required>
+            <div class="invalid-feedback">
+                Please enter a password.
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" id="passwordCheck" placeholder="Confirm Password" required>
+            <div class="invalid-feedback">
+                Please confirm your password.
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Register</button>
+    </form>
+</div>
+
+<script src="registration.js"></script>
+
+
+</body>
+</html>

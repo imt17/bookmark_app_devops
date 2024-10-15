@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Bookmarks Manager</title>
+</head>
+<body>
+    <header>
+        <h1>Bookmarks Manager</h1>
+        <nav>
+            <ul>
+                <li id="register-link"><a href="../registration/registration.html">Register</a></li>
+                <li id="login-link"><a href="../login/login.html">Login</a></li>
+                <li id="logout-link" style="display: none;"><a href="#" id="logout-btn">Logout</a></li>
+                <li id="user-name" style="display: none;"></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="add-bookmark">
+            <h2>Add New Bookmark</h2>
+            <form id="bookmark-form">
+                <input type="text" id="bookmark-title" placeholder="Bookmark Title" required>
+                <input type="url" id="bookmark-url" placeholder="Bookmark URL" required>
+                <select id="bookmark-category">
+                    <option value="">Select Category</option>
+                    <option value="Work">Work</option>
+                    <option value="Study">Study</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Other">Other</option>
+                </select>
+                <button type="submit">Add Bookmark</button>
+            </form>
+        </section>
+
+        <section id="bookmark-list">
+            <h2>All Bookmarks</h2>
+            <div id="bookmarksList"></div> <!-- Container for bookmarks -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Bookmarks Manager</p>
+    </footer>
+
+    <script src="bookmark.js"></script>
+</body>
+</html>

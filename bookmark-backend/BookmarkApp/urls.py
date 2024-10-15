@@ -21,4 +21,6 @@ from django.urls import path, include
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("bookmark_manager.urls")),
+    path("", include("token_authentication.urls")),
+
 ]
