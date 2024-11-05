@@ -3,7 +3,7 @@ from django.db import models
 
 class CustomUser(AbstractUser):
     is_logged = models.BooleanField(default=False)
-    bookmarks = models.JSONField(default=list)  # This can hold a list of bookmarks as JSON
+    bookmarks = models.JSONField(default=list)
 
     def __str__(self):
         return self.username
