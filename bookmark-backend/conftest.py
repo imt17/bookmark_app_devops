@@ -42,16 +42,15 @@ def create_user():
     return make_user
 
 @pytest.fixture(scope='function')
-def refresh_token_data(user):
+def refresh_token(user):
     refresh = RefreshToken.for_user(user)
-    data = {'refresh': refresh}
-    return data
+    return refresh
 
 @pytest.fixture(scope='function')
-def access_token_data(user):
+def access_token(user):
     refresh_token = RefreshToken.for_user(user)
     access_token = refresh_token.access_token
     # print('refresh_token ----------->>>>>>>>>>>', refresh_token)
     # print('access_token ----------->>>>>>>>>>>', access_token)
-    return {'access': access_token}
+    return access_token
 
