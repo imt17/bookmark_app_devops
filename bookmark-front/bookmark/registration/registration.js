@@ -35,7 +35,8 @@ document.getElementById("registerForm").addEventListener("submit", function (e) 
                 alert("Registration successful!");
                 localStorage.setItem('refresh_token', data.refresh);
                 localStorage.setItem('access_token', data.access);
-                window.location.replace("https://127.0.0.1:8080/bookmark/");
+                localStorage.setItem('username', username)
+                window.location.replace("http://127.0.0.1:8080/bookmark/bookmark/bookmark.html");
             } else {
                 alert("Registration failed!");
             }

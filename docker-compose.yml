@@ -1,0 +1,47 @@
+
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ./bookmark-backend
+    container_name: django_backend
+    environment:
+      - DB_NAME=mydb
+      - DB_USER=myuser
+      - DB_PASSWORD=mypassword
+      - DB_HOST=db
+    volumes:
+      - ./bookmark-backend:/app
+    ports:
+      - "8000:8000"
+    networks:
+      - mynetwork
+
+  frontend:
+    build:
+      context: ./bookmark-front
+    container_name: frontend
+    ports:
+      - "8080:80"
+    networks:
+      - mynetwork
+
+  db:
+    image: postgres:14
+    container_name: postgres_db
+    environment:
+      POSTGRES_DB: mydb
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - mynetwork
+
+volumes:
+  pgdata:
+
+networks:
+  mynetwork:
+    driver: bridge

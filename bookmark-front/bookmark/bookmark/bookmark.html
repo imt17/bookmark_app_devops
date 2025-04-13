@@ -3,49 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark Manager</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <title>Bookmarks Manager</title>
 </head>
 <body>
-    <header>
+<header>
         <h1>Bookmarks Manager</h1>
         <nav>
             <ul>
                 <li id="register-link"><a href="../registration/registration.html">Register</a></li>
                 <li id="login-link"><a href="../login/login.html">Login</a></li>
-                <li id="logout-link" style="display: none;"><a href="#" id="logout-btn">Logout</a></li>
+                <li id="logout-link" style="display: none;"><a href="../bookmark/bookmark.html" id="logout-btn">Logout</a></li>
                 <li id="user-name" style="display: none;"></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section id="add-bookmark">
-            <h2>Add New Bookmark</h2>
-            <form id="bookmark-form">
-                <input type="text" id="bookmark-title" placeholder="Bookmark Title" required>
-                <input type="url" id="bookmark-url" placeholder="Bookmark URL" required>
-                <select id="bookmark-category">
-                    <option value="">Select Category</option>
-                    <option value="Work">Work</option>
-                    <option value="Study">Study</option>
-                    <option value="Entertainment">Entertainment</option>
-                    <option value="Other">Other</option>
-                </select>
-                <button type="submit">Add Bookmark</button>
-            </form>
-        </section>
+    <div class="container mt-5">
+        <h1>Bookmark Manager</h1>
+        <div id="message" class="alert" role="alert" style="display: none;"></div>
 
-        <section id="bookmark-list">
-            <h2>All Bookmarks</h2>
-            <div id="bookmarksList"></div> <!-- Container for bookmarks -->
-        </section>
-    </main>
+        <!-- Add Bookmark Form -->
+        <form id="add-bookmark-form" class="mb-4">
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <input type="url" id="url" class="form-control" placeholder="URL" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <input type="text" id="title" class="form-control" placeholder="Title" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <input type="text" id="category" class="form-control" placeholder="Category">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Bookmark</button>
+        </form>
 
-    <footer>
-        <p>&copy; 2024 Bookmarks Manager</p>
-    </footer>
+        <!-- Bookmark List -->
+        <div id="bookmarks-list" class="row"></div>
 
+        <!-- Edit Bookmark Modal -->
+        <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editModalLabel">Edit Bookmark</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form id="edit-bookmark-form">
+                        <div class="modal-body">
+                            <input type="hidden" id="edit-bookmark-id">
+                            <div class="mb-3">
+                                <label for="edit-url" class="form-label">URL</label>
+                                <input type="url" class="form-control" id="edit-url" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="edit-title" class="form-label">Title</label>
+                                <input type="text" class="form-control" id="edit-title" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="edit-category" class="form-label">Category</label>
+                                <input type="text" class="form-control" id="edit-category" required>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Include Bootstrap JS (required for modal) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Your JavaScript file -->
     <script src="bookmark.js"></script>
 </body>
 </html>
