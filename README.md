@@ -16,4 +16,4 @@ A simple Bookmark Manager application that allows users to add, view, edit, dele
 
 - **Frontend**: HTML, CSS, JavaScript
 - **Backend**: Django, Django REST Framework
-- **Database**: SQLite
+- **Database**: Postgresql
